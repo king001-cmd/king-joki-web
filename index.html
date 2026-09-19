@@ -3,52 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Joki - Solusi Tugas Kuliah Terpercaya</title>
+    <title>King Joki - Solusi Profesional Tugas Kuliah & Coding</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; }
-        header { background-color: #0b2240; color: #fff; padding: 40px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5em; color: #f1c40f; }
-        header p { margin: 10px 0 0; font-size: 1.2em; }
-        .container { max-width: 800px; margin: 30px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h2 { color: #0b2240; border-bottom: 2px solid #f1c40f; padding-bottom: 5px; }
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #f1c40f;
+            --accent-glow: #ffd700;
+            --text-light: #f8f9fa;
+            --text-dark: #333333;
+            --success: #27ae60;
+        }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #0b1426; color: var(--text-light); }
+        
+        /* Header Mewah */
+        header { 
+            background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%); 
+            padding: 60px 20px; 
+            text-align: center; 
+            border-bottom: 3px solid var(--accent);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 3em; 
+            color: var(--accent); 
+            letter-spacing: 4px; 
+            text-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+            font-weight: 800;
+        }
+        header p { margin: 15px 0 0; font-size: 1.2em; color: #a8b2d1; font-weight: 300; }
+        
+        .container { max-width: 850px; margin: 40px auto; padding: 30px; background: var(--secondary); border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border: 1px solid rgba(251, 213, 60, 0.1); }
+        
+        h2 { color: var(--accent); border-bottom: 1px solid rgba(241, 196, 15, 0.3); padding-bottom: 8px; margin-top: 40px; font-size: 1.6em; display: flex; align-items: center; gap: 10px; }
+        
         ul { list-style-type: none; padding: 0; }
-        li { padding: 10px 0; border-bottom: 1px solid #ddd; }
-
-        li strong { color: #c0392b; }
-        .btn-order { display: block; text-align: center; background-color: #27ae60; color: white; padding: 15px; margin: 30px 0; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.2em; }
-        .btn-order:hover { background-color: #219150; }
-        .footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9em; }
+        li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1.05em; line-height: 1.6; color: #cdd6f4; }
+        li strong { color: var(--accent); }
+        
+        /* Tabel Pricelist Keren */
+        .price-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 25px 0; border-radius: 8px; overflow: hidden; border: 1px solid rgba(241, 196, 15, 0.2); }
+        .price-table th { background-color: #020c1b; color: var(--accent); padding: 15px; text-align: left; font-weight: 600; font-size: 1.1em; }
+        .price-table td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); background-color: rgba(2, 12, 27, 0.3); color: #cdd6f4; }
+        .price-table tr:last-child td { border-bottom: none; }
+        .price-table tr:hover td { background-color: rgba(241, 196, 15, 0.05); }
+        
+        .badge-price { background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%); color: #020c1b; padding: 6px 14px; border-radius: 5px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 10px rgba(241, 196, 15, 0.3); display: inline-block; }
+        
+        /* Tombol CTA Premium */
+        .btn-order { 
+            display: block; 
+            text-align: center; 
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); 
+            color: white; 
+            padding: 18px; 
+            margin: 40px 0 20px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 8px; 
+            font-size: 1.3em; 
+            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4); 
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        .btn-order:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(39, 174, 96, 0.6); }
+        
+        .footer { text-align: center; padding: 30px; color: #8892b0; font-size: 0.95em; background-color: #020c1b; margin-top: 60px; border-top: 1px solid rgba(241, 196, 15, 0.2); }
     </style>
 </head>
 <body>
 
 <header>
     <h1>KING JOKI</h1>
-    <p>Raja-nya Solusi Tugas Kuliah Anda: Cepat, Rahasia, & Berkualitas</p>
+    <p>Raja-nya Solusi Akademis & Pengembangan Aplikasi: Cepat, Rahasia, & Berkualitas</p>
 </header>
 
 <div class="container">
-    <h2>👑 Layanan Kami</h2>
+    <h2>👑 Layanan VIP Kami</h2>
     <ul>
-        <li><strong>Jasa Makalah & Esai:</strong> Penyusunan full makalah, resume buku, critical review jurnal + PPT Presentasi.</li>
-        <li><strong>Jasa Skripsi & Tugas Akhir:</strong> Bimbingan dan pengerjaan Bab 1 sampai Bab 5 (Full Paket/Eceran).</li>
-        <li><strong>Jasa Olah Data:</strong> Analisis statistik menggunakan SPSS, SmartPLS, dan Excel.</li>
-        <li><strong>Kerapian Akademis:</strong> Perbaikan margin, daftar pustaka otomatis (Mendeley), dan cek Turnitin.</li>
+        <li>✨ <strong>Jasa Skripsi & Tugas Akhir:</strong> Pendampingan eksklusif terstruktur dan pengerjaan Bab 1 sampai Bab 5 secara tuntas.</li>
+        <li>✨ <strong>Jasa Makalah & Esai Premium:</strong> Penyusunan dokumen makalah ilmiah lengkap, resume jurnal, critical review + Slide PPT presentasi mewah.</li>
+        <li>✨ <strong>Jasa Olah Data & Analisis:</strong> Pengolahan data penelitian kuantitatif/kualitatif dengan tools SPSS, SmartPLS, EViews, dan Excel.</li>
+        <li>✨ <strong>Jasa Tugas Coding & Aplikasi (APK):</strong> Perancangan program kustom (Python, Web, PHP) serta kompilasi paket aplikasi Android (.apk).</li>
+        <li>✨ <strong>Standardisasi Akademis:</strong> Perbaikan format tata letak, sitasi Mendeley otomatis, serta optimasi kelolosan uji Turnitin.</li>
     </ul>
 
-    <h2>🛡️ Jaminan King Joki</h2>
+    <h2>💰 Daftar Tarif Layanan Premium</h2>
+    <table class="price-table">
+        <thead>
+            <tr>
+                <th>Kategori Layanan</th>
+                <th>Tarif Eksklusif</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jasa Bimbingan & Pengerjaan Skripsi (Full Bab)</td>
+                <td><span class="badge-price">Mulai Rp1.000.000</span></td>
+            </tr>
+            <tr>
+                <td>Penyusunan Makalah Akademik / Esai Ilmiah</td>
+                <td><span class="badge-price">Mulai Rp300.000</span></td>
+            </tr>
+            <tr>
+                <td>Tugas Coding Khusus & Pembuatan Aplikasi (APK)</td>
+                <td><span class="badge-price">Mulai Rp300.000</span></td>
+            </tr>
+            <tr>
+                <td>Analisis Olah Data Penelitian & Statistik (SPSS/PLS)</td>
+                <td><span class="badge-price">Mulai Rp300.000</span></td>
+            </tr>
+            <tr>
+                <td>Paket Kerapian Margin, Mendeley & Turnitin Paket Lengkap</td>
+                <td><span class="badge-price">Mulai Rp300.000</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>🛡️ Protokol Keamanan & Jaminan</h2>
     <ul>
-        <li>✨ <strong>100% Anonim & Rahasia:</strong> Identitas Anda dan kampus aman terjaga.</li>
-        <li>✨ <strong>Anti-Plagiarisme:</strong> Hasil pengerjaan orisinal dan lolos uji Turnitin.</li>
-        <li>✨ <strong>Garansi Revisi:</strong> Gratis perbaikan jika tidak sesuai instruksi awal.</li>
+        <li>🔒 <strong>100% Anonim & Enkripsi Data:</strong> Identitas personal, berkas, serta nama institusi Anda dijamin aman mutlak dari kebocoran privasi (*anti-data leaks*).</li>
+        <li>asi <strong>Orisinalitas Tinggi:</strong> Penulisan orisinal, terstruktur rapi, bebas plagiarisme, dan lolos uji batas Turnitin.</li>
+        <li>🔄 <strong>Garansi Revisi Sepuasnya:</strong> Fasilitas perbaikan gratis berkali-kali tanpa biaya tambahan jika ada penyesuaian instruksi dosen.</li>
     </ul>
 
-    <!-- Ganti Nomor WhatsApp Anda di bawah ini -->
-    <a href="https://wa.me" class="btn-order">💬 Hubungi Admin via WhatsApp</a>
+    <a href="https://wa.me" class="btn-order">💬 Hubungi Admin via WhatsApp (24 Jam Resmi)</a>
 </div>
 
 <div class="footer">
-    &copy; 2026 King Joki. All Rights Reserved.
+    &copy; 2026 King Joki. All Rights Reserved. Masterpiece by king001-cmd.
 </div>
 
 </body>
