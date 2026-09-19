@@ -3,138 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Joki - Solusi Profesional Tugas Kuliah & Coding</title>
+    <title>King Joki - Premium Academic & Coding Solution</title>
     <style>
         :root {
-            --primary: #0a192f;
-            --secondary: #172a45;
-            --accent: #f1c40f;
-            --accent-glow: #ffd700;
-            --text-light: #f8f9fa;
-            --text-dark: #333333;
-            --success: #27ae60;
+            --bg-dark: #030a16;
+            --bg-card: rgba(10, 25, 47, 0.7);
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --gold-solid: #f1c40f;
+            --text-main: #f8f9fa;
+            --text-muted: #8892b0;
+            --border-glow: rgba(241, 196, 15, 0.15);
         }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #0b1426; color: var(--text-light); }
-        
-        /* Header Mewah */
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background-color: var(--bg-dark); color: var(--text-main); scroll-behavior: smooth; }
         header { 
-            background: linear-gradient(135deg, #020c1b 0%, #0a192f 100%); 
-            padding: 60px 20px; 
-            text-align: center; 
-            border-bottom: 3px solid var(--accent);
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: radial-gradient(circle at top, #0a192f 0%, var(--bg-dark) 80%);
+            padding: 80px 20px 60px; text-align: center; border-bottom: 2px solid transparent; border-image: var(--gold-gradient) 1; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
         }
-        header h1 { 
-            margin: 0; 
-            font-size: 3em; 
-            color: var(--accent); 
-            letter-spacing: 4px; 
-            text-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
-            font-weight: 800;
-        }
-        header p { margin: 15px 0 0; font-size: 1.2em; color: #a8b2d1; font-weight: 300; }
-        
-        .container { max-width: 850px; margin: 40px auto; padding: 30px; background: var(--secondary); border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border: 1px solid rgba(251, 213, 60, 0.1); }
-        
-        h2 { color: var(--accent); border-bottom: 1px solid rgba(241, 196, 15, 0.3); padding-bottom: 8px; margin-top: 40px; font-size: 1.6em; display: flex; align-items: center; gap: 10px; }
-        
-        ul { list-style-type: none; padding: 0; }
-        li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1.05em; line-height: 1.6; color: #cdd6f4; }
-        li strong { color: var(--accent); }
-        
-        /* Tabel Pricelist Keren */
-        .price-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 25px 0; border-radius: 8px; overflow: hidden; border: 1px solid rgba(241, 196, 15, 0.2); }
-        .price-table th { background-color: #020c1b; color: var(--accent); padding: 15px; text-align: left; font-weight: 600; font-size: 1.1em; }
-        .price-table td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); background-color: rgba(2, 12, 27, 0.3); color: #cdd6f4; }
-        .price-table tr:last-child td { border-bottom: none; }
-        .price-table tr:hover td { background-color: rgba(241, 196, 15, 0.05); }
-        
-        .badge-price { background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%); color: #020c1b; padding: 6px 14px; border-radius: 5px; font-weight: bold; font-size: 0.95em; box-shadow: 0 0 10px rgba(241, 196, 15, 0.3); display: inline-block; }
-        
-        /* Tombol CTA Premium */
-        .btn-order { 
-            display: block; 
-            text-align: center; 
+        header .crown-icon { font-size: 3.5em; margin-bottom: 10px; display: inline-block; animation: pulse 2s infinite; }
+        header h1 { margin: 0; font-size: 3.2em; font-weight: 800; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 5px; text-shadow: 0 0 20px rgba(241,196,15,0.2); }
+        header p { margin: 15px 0 0; font-size: 1.25em; color: #a8b2d1; font-weight: 300; }
+        .wrapper { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .section-card { background: var(--bg-card); border-radius: 16px; padding: 35px; margin: 40px 0; border: 1px solid var(--border-glow); backdrop-filter: blur(8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        h2 { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; border-bottom: 1px solid rgba(241, 196, 15, 0.2); padding-bottom: 12px; margin-top: 0; font-size: 1.8em; font-weight: 700; letter-spacing: 1px; }
+        .service-list { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        .service-item { background: rgba(2, 12, 27, 0.5); padding: 20px; border-radius: 8px; border-left: 4px solid var(--gold-solid); transition: 0.3s; }
+        .service-item:hover { transform: translateX(5px); background: rgba(241, 196, 15, 0.03); }
+        .service-item h3 { margin: 0 0 8px 0; color: var(--gold-solid); font-size: 1.2em; }
+        .service-item p { margin: 0; color: #cdd6f4; font-size: 0.98em; line-height: 1.6; }
+        .price-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; margin-top: 15px; }
+        .price-table th { background-color: #020c1b; color: var(--gold-solid); padding: 15px; text-align: left; border-radius: 6px; font-weight: 600; }
+        .price-table td { padding: 18px 15px; background-color: rgba(2, 12, 27, 0.4); color: #e2e8f0; border-top: 1px solid rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.02); }
+        .price-table tr td:first-child { border-left: 1px solid rgba(255,255,255,0.02); border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+        .price-table tr td:last-child { border-right: 1px solid rgba(255,255,255,0.02); border-top-right-radius: 8px; border-bottom-right-radius: 8px; text-align: right; }
+        .badge-premium { background: var(--gold-gradient); color: #020c1b; padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.95em; box-shadow: 0 4px 15px rgba(241,196,15,0.25); display: inline-block; }
+        .dev-badge-container { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+        .dev-badge { flex: 1; min-width: 200px; background: rgba(2, 12, 27, 0.6); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95em; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .dev-badge:hover { border-color: var(--gold-solid); background: rgba(241,196,15,0.05); transform: translateY(-2px); }
+        .step-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .step-card { background: rgba(2, 12, 27, 0.4); padding: 20px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.02); }
+        .step-num { width: 35px; height: 35px; background: var(--gold-gradient); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 12px; }
+        .pay-methods { display: flex; gap: 20px; justify-content: center; margin-top: 20px; flex-wrap: wrap; font-weight: 600; color: #a8b2d1; font-size: 1.1em; }
+        .pay-item { background: #020c1b; padding: 10px 20px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); }
+        .faq-item { margin-bottom: 15px; padding: 15px; background: rgba(2, 12, 27, 0.4); border-radius: 8px; border: 1px solid rgba(255,255,255,0.02); }
+        .faq-q { font-weight: 600; color: var(--gold-solid); margin-bottom: 6px; font-size: 1.05em; }
+        .faq-a { color: #8892b0; font-size: 0.95em; line-height: 1.5; }
+        .btn-wa-lux { 
+            display: flex; align-items: center; justify-content: center; gap: 12px;
             background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); 
-            color: white; 
-            padding: 18px; 
-            margin: 40px 0 20px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 8px; 
-            font-size: 1.3em; 
-            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4); 
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
+            color: white; padding: 20px; margin: 45px 0 20px; 
+            text-decoration: none; font-weight: 700; border-radius: 10px; 
+            font-size: 1.35em; box-shadow: 0 10px 25px rgba(39, 174, 96, 0.4); 
+            transition: all 0.3s ease; letter-spacing: 1px; position: relative; overflow: hidden;
         }
-        .btn-order:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(39, 174, 96, 0.6); }
-        
-        .footer { text-align: center; padding: 30px; color: #8892b0; font-size: 0.95em; background-color: #020c1b; margin-top: 60px; border-top: 1px solid rgba(241, 196, 15, 0.2); }
+        .btn-wa-lux::after {
+            content: ''; position: absolute; top: -50%; left: -60%; width: 30%; height: 200%; background: rgba(255,255,255,0.2); transform: rotate(30deg); animation: shine 3.5s infinite;
+        }
+        .btn-wa-lux:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(39, 174, 96, 0.6); }
+        @keyframes shine { 100% { left: 130%; } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .footer { text-align: center; padding: 35px; color: var(--text-muted); font-size: 0.95em; background-color: #020c1b; margin-top: 80px; border-top: 1px solid rgba(241, 196, 15, 0.15); }
     </style>
 </head>
 <body>
-
 <header>
+    <div class="crown-icon">👑</div>
     <h1>KING JOKI</h1>
-    <p>Raja-nya Solusi Akademis & Pengembangan Aplikasi: Cepat, Rahasia, & Berkualitas</p>
+    <p>Premium Academic Writing & Professional Application Development</p>
 </header>
-
-<div class="container">
-    <h2>👑 Layanan VIP Kami</h2>
-    <ul>
-        <li>✨ <strong>Jasa Skripsi & Tugas Akhir:</strong> Pendampingan eksklusif terstruktur dan pengerjaan Bab 1 sampai Bab 5 secara tuntas.</li>
-        <li>✨ <strong>Jasa Makalah & Esai Premium:</strong> Penyusunan dokumen makalah ilmiah lengkap, resume jurnal, critical review + Slide PPT presentasi mewah.</li>
-        <li>✨ <strong>Jasa Olah Data & Analisis:</strong> Pengolahan data penelitian kuantitatif/kualitatif dengan tools SPSS, SmartPLS, EViews, dan Excel.</li>
-        <li>✨ <strong>Jasa Tugas Coding & Aplikasi (APK):</strong> Perancangan program kustom (Python, Web, PHP) serta kompilasi paket aplikasi Android (.apk).</li>
-        <li>✨ <strong>Standardisasi Akademis:</strong> Perbaikan format tata letak, sitasi Mendeley otomatis, serta optimasi kelolosan uji Turnitin.</li>
-    </ul>
-
-    <h2>💰 Daftar Tarif Layanan Premium</h2>
-    <table class="price-table">
-        <thead>
-            <tr>
-                <th>Kategori Layanan</th>
-                <th>Tarif Eksklusif</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Jasa Bimbingan & Pengerjaan Skripsi (Full Bab)</td>
-                <td><span class="badge-price">Mulai Rp1.000.000</span></td>
-            </tr>
-            <tr>
-                <td>Penyusunan Makalah Akademik / Esai Ilmiah</td>
-                <td><span class="badge-price">Mulai Rp300.000</span></td>
-            </tr>
-            <tr>
-                <td>Tugas Coding Khusus & Pembuatan Aplikasi (APK)</td>
-                <td><span class="badge-price">Mulai Rp300.000</span></td>
-            </tr>
-            <tr>
-                <td>Analisis Olah Data Penelitian & Statistik (SPSS/PLS)</td>
-                <td><span class="badge-price">Mulai Rp300.000</span></td>
-            </tr>
-            <tr>
-                <td>Paket Kerapian Margin, Mendeley & Turnitin Paket Lengkap</td>
-                <td><span class="badge-price">Mulai Rp300.000</span></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>🛡️ Protokol Keamanan & Jaminan</h2>
-    <ul>
-        <li>🔒 <strong>100% Anonim & Enkripsi Data:</strong> Identitas personal, berkas, serta nama institusi Anda dijamin aman mutlak dari kebocoran privasi (*anti-data leaks*).</li>
-        <li>asi <strong>Orisinalitas Tinggi:</strong> Penulisan orisinal, terstruktur rapi, bebas plagiarisme, dan lolos uji batas Turnitin.</li>
-        <li>🔄 <strong>Garansi Revisi Sepuasnya:</strong> Fasilitas perbaikan gratis berkali-kali tanpa biaya tambahan jika ada penyesuaian instruksi dosen.</li>
-    </ul>
-
-    <a href="https://wa.me" class="btn-order">💬 Hubungi Admin via WhatsApp (24 Jam Resmi)</a>
-</div>
-
-<div class="footer">
-    &copy; 2026 King Joki. All Rights Reserved. Masterpiece by king001-cmd.
-</div>
-
-</body>
-</html>
+<div class="wrapper">
+    <div class="section-card">
+        <h2>💎 Layanan Eksklusif & Lengkap</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>📚 Skripsi & Tugas Akhir VIP</h3>
+                <p>Pendampingan intensif dari penentuan judul, pengerjaan Bab 1 hingga Bab 5 secara komprehensif, olah referensi, hingga persiapan simulasi sidang pasca-revisi.</p>
+            </div>
+            <div class="service-item">
+                <h3>📝 Makalah, Esai & Tugas Reguler</h3>
+                <p>Penyusunan makalah terstruktur, analisis jurnal internasional, critical review buku, serta pembuatan slide presentasi (PPT) berdesain interaktif dan profesional.</p>
+            </div>
+            <div class="service-item">
+                <h3>💻 Jasa Tugas Coding & Pembuatan APK</h3>
+                <p>Koding script tingkat lanjut (Python, Web Backend/Frontend, PHP) serta perancangan berkas aplikasi Android (.apk) kustom berbasis kebutuhan proyek kuliah.</p>
+            </div>
+            <div class="service-item">
+                <h3>📊 Olah Data Penelitian & Statistik</h3>
+                <p>Analisis metodologi penelitian kuantitatif/kualitatif dengan pengujian validitas menggunakan tools SPSS, SmartPLS, EViews, dan makro Excel.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section-card">
+        <h2>💰 Tabel Tarif Layanan Resmi King Joki</h2>
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Kategori Layanan Utama</th>
+                    <th>Harga Investasi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jasa Skripsi & Tugas Akhir (Full Pengerjaan Semua Bab)</td>
+                    <td><span class="badge-premium">Mulai Rp1.000.000</span></td>
+                </tr>
+                <tr>
+                    <td>Penyusunan Makalah Lengkap / Esai Ilmiah Kampus</td>
+                    <td><span class="badge-premium">Mulai Rp300.000</span></td>
+                </tr>
+                <tr>
+                    <td>Tugas Pemrograman / Coding Kustom Khusus IT</td>
+                    <td><span class="badge-premium">Mulai Rp300.000</span></td>
+                </tr>
+                <tr>
+                    <td>Perancangan & Pembuatan Aplikasi Android (.apk)</td>
+                    <td><span class="badge-premium">Mulai Rp300.000</span></td>
+                </tr>
+                <tr>
+                    <td>Olah Data Uji Penelitian / Olah Statistik (SPSS/PLS)</td>
+                    <td><span class="badge-premium">Mulai Rp300.000</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section-card">
+        <h2>⚙️ Validasi Kredibilitas Developer</h2>
+        <p style="color: var(--text-muted); margin: 0 0 15px 0;">Lihat basis repositori pengerjaan dan kerangka logika pemrograman kami secara langsung:</p>
+        <div class="dev-badge-container">
+            <a href="https://github.com" class="dev-badge" target="_blank">🐙 Repositori Resmi GitHub</a>
+            <a href="https://thunkable.com" class="dev-badge" target="_blank">📱 Proyek Aplikasi Thunkable</a>
+        </div>
+    </div>
+    <div class="section-card">
