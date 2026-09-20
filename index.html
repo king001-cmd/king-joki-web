@@ -1,177 +1,141 @@
+cat << 'EOF' > index.html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta name="google-site-verification" content="LZwHNPW9CLUeNEwGz0KE4_qF3MKrH5OEUiIUvo7H2Y4" />
-    <meta property="og:image" content="https://netlify.app">
-    <meta name="description" content="Solusi akademis & pemrograman terpercaya untuk mahasiswa! Kami melayani pengerjaan full Bab Skripsi, Makalah, Olah Data Penelitian (SPSS/PLS), serta Tugas Coding & Aplikasi Android (.apk).">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Joki - Premium Academic & Coding Solution</title>
+    <title>King Joki</title>
     <style>
         :root {
-            --bg-dark: #030a16;
-            --bg-card: rgba(10, 25, 47, 0.7);
-            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            --gold-solid: #f1c40f;
-            --text-main: #f8f9fa;
+            --gold-solid: #ffcc00;
+            --bg-dark: #070b19;
+            --card-bg: rgba(2, 12, 27, 0.4);
+            --text-light: #ccd6f6;
             --text-muted: #8892b0;
-            --border-glow: rgba(241, 196, 15, 0.15);
         }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background-color: var(--bg-dark); color: var(--text-main); scroll-behavior: smooth; }
-        
-        /* CSS Mutlak Menghapus Total Watermark Netlify */
-        #netlify-nitro-badge, [class*="netlify"], .netlify-badge, [id*="netlify"] { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; height: 0 !important; }
-        
-        header { 
-            background: radial-gradient(circle at top, #0a192f 0%, var(--bg-dark) 80%);
-            padding: 80px 20px 60px; text-align: center; border-bottom: 2px solid transparent; border-image: var(--gold-gradient) 1; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        body {
+            background-color: var(--bg-dark);
+            color: #fff;
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
         }
-        header .crown-icon { font-size: 3.5em; margin-bottom: 10px; display: inline-block; animation: pulse 2s infinite; }
-        header h1 { margin: 0; font-size: 3.2em; font-weight: 800; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 5px; text-shadow: 0 0 20px rgba(241,196,15,0.2); }
-        header p { margin: 15px 0 0; font-size: 1.25em; color: #a8b2d1; font-weight: 300; }
-        .wrapper { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-        .section-card { background: var(--bg-card); border-radius: 16px; padding: 35px; margin: 40px 0; border: 1px solid var(--border-glow); backdrop-filter: blur(8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        h2 { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; border-bottom: 1px solid rgba(241, 196, 15, 0.2); padding-bottom: 12px; margin-top: 0; font-size: 1.8em; font-weight: 700; letter-spacing: 1px; }
-        .service-list { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        .service-item { background: rgba(2, 12, 27, 0.5); padding: 20px; border-radius: 8px; border-left: 4px solid var(--gold-solid); transition: 0.3s; }
-        .service-item:hover { transform: translateX(5px); background: rgba(241, 196, 15, 0.03); }
-        .service-item h3 { margin: 0 0 8px 0; color: var(--gold-solid); font-size: 1.2em; }
-        .service-item p { margin: 0; color: #cdd6f4; font-size: 0.98em; line-height: 1.6; }
-        .price-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; margin-top: 15px; }
-        .price-table th { background-color: #020c1b; color: var(--gold-solid); padding: 15px; text-align: left; border-radius: 6px; font-weight: 600; }
-        .price-table td { padding: 18px 15px; background-color: rgba(2, 12, 27, 0.4); color: #e2e8f0; border-top: 1px solid rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.02); }
-        .price-table tr td:first-child { border-left: 1px solid rgba(255,255,255,0.02); border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
-        .price-table tr td:last-child { border-right: 1px solid rgba(255,255,255,0.02); border-top-right-radius: 8px; border-bottom-right-radius: 8px; text-align: right; }
-        .badge-premium { background: var(--gold-gradient); color: #020c1b; padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.95em; box-shadow: 0 4px 15px rgba(241,196,15,0.25); display: inline-block; }
-        .dev-badge-container { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
-        .dev-badge { flex: 1; min-width: 200px; background: rgba(2, 12, 27, 0.6); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95em; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .dev-badge:hover { border-color: var(--gold-solid); background: rgba(241, 196, 15, 0.05); transform: translateY(-2px); }
-        .step-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-        .step-card { background: rgba(2, 12, 27, 0.4); padding: 20px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.02); }
-        .step-num { width: 35px; height: 35px; background: var(--gold-gradient); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 12px; }
-        .pay-methods { display: flex; gap: 20px; justify-content: center; margin-top: 20px; flex-wrap: wrap; font-weight: 600; color: #a8b2d1; font-size: 1.1em; }
-        .pay-item { background: #020c1b; padding: 10px 20px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); }
-        .faq-item { margin-bottom: 15px; padding: 15px; background: rgba(2, 12, 27, 0.4); border-radius: 8px; border: 1px solid rgba(255,255,255,0.02); }
-        .faq-q { font-weight: 600; color: var(--gold-solid); margin-bottom: 6px; font-size: 1.05em; }
-        .faq-a { color: #8892b0; font-size: 0.95em; line-height: 1.5; }
-        .btn-wa-lux { 
-            display: flex; align-items: center; justify-content: center; gap: 12px;
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); 
-            color: white; padding: 20px; margin: 45px 0 20px; 
-            text-decoration: none; font-weight: 700; border-radius: 10px; 
-            font-size: 1.35em; box-shadow: 0 10px 25px rgba(39, 174, 96, 0.4); 
-            transition: all 0.3s ease; letter-spacing: 1px; position: relative; overflow: hidden;
+        .crown-icon {
+            font-size: 50px;
+            margin-top: 40px;
         }
-        .btn-wa-lux::after {
-            content: ''; position: absolute; top: -50%; left: -60%; width: 30%; height: 200%; background: rgba(255,255,255,0.2); transform: rotate(30deg); animation: shine 3.5s infinite;
+        h1 {
+            color: var(--gold-solid);
+            font-size: 2.5em;
+            margin: 10px 0;
+            letter-spacing: 2px;
+            font-weight: bold;
         }
-        .btn-wa-lux:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(39, 174, 96, 0.6); }
-        @keyframes shine { 100% { left: 130%; } }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        .footer { text-align: center; padding: 35px; color: var(--text-muted); font-size: 0.95em; background-color: #020c1b; margin-top: 80px; border-top: 1px solid rgba(241, 196, 15, 0.15); }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            line-height: 1.5;
+        }
+        .wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 204, 0, 0.15);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: var(--gold-solid);
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+            padding-bottom: 10px;
+        }
+        .service-box {
+            border-left: 3px solid var(--gold-solid);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+        .service-box:last-child {
+            margin-bottom: 0;
+        }
+        h3 {
+            color: var(--gold-solid);
+            margin: 0 0 8px 0;
+            font-size: 1.2em;
+        }
+        .service-box p {
+            text-align: left;
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+        .btn-wa-lux {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 15px 30px;
+            margin: 10px auto;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 10px;
+            font-size: 1.15em;
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            font-family: sans-serif;
+        }
+        .btn-wa-lux:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.4);
+        }
     </style>
 </head>
 <body>
-<header>
+
     <div class="crown-icon">👑</div>
     <h1>KING JOKI</h1>
-    <p><Premium Office Administration Services & Professional Application Development/p>
-</header>
-<div class="wrapper">
-    <div class="section-card">
-      <h2>💎 Layanan Eksklusif & Lengkap</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>📚 Skripsi & Tugas Akhir VIP</h3>
-                <p>Pendampingan intensif dari penentuan judul, pengerjaan Bab 1 hingga Bab 5 secara komprehensif, olah referensi, hingga persiapan simulasi sidang pasca-revisi.</p>
+    <p class="subtitle">Premium Office Administration Services & Professional Application Development</p>
+
+    <div class="wrapper">
+        <div class="section-card">
+            <h2>💎 Layanan Eksklusif & Lengkap</h2>
+            
+            <div class="service-box">
+                <h3>📋 Jasa Pengetikan & Pengolahan Dokumen Kantor</h3>
+                <p>Bantuan penyusunan laporan bisnis, administrasi data kantor, penataan dokumen perusahaan, dan pengarsipan digital secara komprehensif.</p>
             </div>
-            <div class="service-item">
-                <h3>📝 Makalah, Esai & Tugas Reguler</h3>
-                <p>Penyusunan makalah terstruktur, analisis jurnal internasional, critical review buku, serta pembuatan slide presentasi (PPT) berdesain interaktif dan profesional.</p>
+
+            <div class="service-box">
+                <h3>📝 Penyusunan Formulir & Laporan Perusahaan</h3>
+                <p>Pembuatan slide presentasi bisnis profesional, analisis data operasional, penyusunan riset pasar internal, serta manajemen berkas digital.</p>
             </div>
-            <div class="service-item">
+
+            <div class="service-box">
                 <h3>💻 Jasa Tugas Coding & Pembuatan APK</h3>
-                <p>Koding script tingkat lanjut (Python, Web Backend/Frontend, PHP) serta perancangan berkas aplikasi Android (.apk) kustom berbasis kebutuhan proyek kuliah.</p>
-            </div>
-            <div class="service-item">
-                <h3>📊 Olah Data Penelitian & Statistik</h3>
-                <p>Analisis metodologi penelitian kuantitatif/kualitatif dengan pengujian validitas menggunakan tools SPSS, SmartPLS, EViews, dan makro Excel.</p>
+                <p>Koding script tingkat lanjut (Python, Web Backend/Frontend, & PHP) serta pengembangan aplikasi Android kustom.</p>
             </div>
         </div>
-    </div>
-    <div class="section-card">
-        <h2>💰 Tabel Tarif Layanan Resmi King Joki</h2>
-        <table class="price-table">
-            <thead>
-                <tr>
-                    <th>Kategori Layanan Utama</th>
-                    <th>Harga Investasi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Jasa Skripsi & Tugas Akhir (Full Pengerjaan Semua Bab)</td>
-                    <td><span class="badge-premium">Mulai Rp1.000.000</span></td>
-                </tr>
-                <tr>
-                    <td>Penyusunan Makalah Lengkap / Esai Ilmiah Kampus</td>
-                    <td><span class="badge-premium">Mulai Rp300.000</span></td>
-                </tr>
-                <tr>
-                    <td>Tugas Pemrograman / Coding Kustom Khusus IT</td>
-                    <td><span class="badge-premium">Mulai Rp300.000</span></td>
-                </tr>
-                <tr>
-                    <td>Perancangan & Pembuatan Aplikasi Android (.apk)</td>
-                    <td><span class="badge-premium">Mulai Rp300.000</span></td>
-                </tr>
-                <tr>
-                    <td>Olah Data Uji Penelitian / Olah Statistik (SPSS/PLS)</td>
-                    <td><span class="badge-premium">Mulai Rp300.000</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="section-card">
-        <h2>⚙️ Validasi Kredibilitas Developer</h2>
-        <p style="color: var(--text-muted); margin: 0 0 15px 0;">Lihat basis repositori pengerjaan dan kerangka logika pemrograman kami secara langsung:</p>
-        <div class="dev-badge-container">
-            <a href="https://github.com" class="dev-badge" target="_blank">🐙 Repositori Resmi GitHub</a>
-            <a href="https://thunkable.com" class="dev-badge" target="_blank">📱 Proyek Aplikasi Thunkable</a>
+        
+        <div style="text-align: center;">
+            <a href="https://wa.me" class="btn-wa-lux" target="_blank">
+                💬 Hubungi via WhatsApp Bisnis
+            </a>
         </div>
     </div>
-    <div class="section-card">
-        <h2>🚀 Alur Pemesanan Cepat (Simple Workflow)</h2>
-        <div class="step-container">
-            <div class="step-card"><div class="step-num">1</div><h4 style="color:var(--gold-solid); margin:0 0 8px;">Konsultasi</h4><p style="color:var(--text-muted); font-size:0.9em; margin:0;">Kirim berkas soal via WA Admin.</p></div>
-            <div class="step-card"><div class="step-num">2</div><h4 style="color:var(--gold-solid); margin:0 0 8px;">Deal & Pay</h4><p style="color:var(--text-muted); font-size:0.9em; margin:0;">Sepakati deadline dan dp aman.</p></div>
-            <div class="step-card"><div class="step-num">3</div><h4 style="color:var(--gold-solid); margin:0 0 8px;">Proses & Terima</h4><p style="color:var(--text-muted); font-size:0.9em; margin:0;">Tugas dikirim tepat waktu.</p></div>
-        </div>
-    </div>
-    <div class="section-card" style="text-align: center;">
-        <h2>🛡️ Gerbang Pembayaran Aman & Instan</h2>
-        <div class="pay-methods"><div class="pay-item">📱 QRIS Scan</div><div class="pay-item">💰 GoPay / E-Wallet</div><div class="pay-item">🏦 Bank Transfer</div></div>
-    </div>
-    <div class="section-card">
-        <h2>💬 FAQ (Pertanyaan Umum)</h2>
-        <div class="faq-item"><div class="faq-q">Apakah identitas saya aman?</div><div class="faq-a">Dijamin 100% aman dan anonim dari kebocoran privasi (*anti-data leaks*).</div></div>
-        <div class="faq-item"><div class="faq-q">Bagaimana jika butuh revisi?</div><div class="faq-a">Kami menyediakan fasilitas garansi revisi sepuasnya secara gratis.</div></div>
-    </div>
-    <a href="https://wa.me" class="btn-wa-lux">
-        💬 MASUKKAN ORDER SEKARANG (ADMIN RESPON 24 JAM)
-    </a>
-    <div class="footer">&copy; 2026 King Joki Luxury Edition. All Rights Reserved. Crafted by king001-cmd.</div>
-</div>
+
 </body>
-</html><script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const removeNetlify = () => {
-            const badges = document.querySelectorAll('#netlify-nitro-badge, [class*="netlify"], [id*="netlify"], iframe[src*="netlify"]');
-            badges.forEach(el => el.remove());
-        };
-        removeNetlify();
-        setInterval(removeNetlify, 300);
-    });
-</script>
-
-
+</html>
+EOF
