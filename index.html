@@ -160,5 +160,15 @@
     <div class="footer">&copy; 2026 King Joki Luxury Edition. All Rights Reserved. Crafted by king001-cmd.</div>
 </div>
 </body>
-</html>
+</html><script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const removeNetlify = () => {
+            const badges = document.querySelectorAll('#netlify-nitro-badge, [class*="netlify"], [id*="netlify"], iframe[src*="netlify"]');
+            badges.forEach(el => el.remove());
+        };
+        removeNetlify();
+        setInterval(removeNetlify, 300);
+    });
+</script>
+
 
