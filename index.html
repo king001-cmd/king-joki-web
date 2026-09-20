@@ -3,82 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Joki</title>
+    <title>King Joki - Premium Office Services & Application Development</title>
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
+        :root {
+            --gold-gradient: linear-gradient(135deg, #ffe066 0%, #ffcc00 50%, #cc9900 100%);
+            --gold-solid: #ffcc00;
+            --bg-dark: #050814;
+            --card-bg: linear-gradient(180deg, rgba(10, 25, 47, 0.7) 0%, rgba(2, 12, 27, 0.8) 100%);
+            --box-bg: rgba(255, 255, 255, 0.02);
+            --border-glow: rgba(255, 204, 0, 0.15);
+            --text-main: #ccd6f6;
+            --text-muted: #8892b0;
+        }
+        
+        * { box-sizing: border-box; }
+        
         body {
-            background-color: #070b19;
+            background-color: var(--bg-dark);
             color: #fff;
-            font-family: sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+        
         .crown-icon {
-            font-size: 50px;
-            margin-top: 40px;
+            font-size: 55px;
+            animation: float 3s ease-in-out infinite;
+            margin-bottom: 5px;
         }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
         h1 {
-            color: #ffcc00;
-            font-size: 2.5em;
-            margin: 10px 0;
-            letter-spacing: 2px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.8em;
+            margin: 5px 0;
+            letter-spacing: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            filter: drop-shadow(0 2px 10px rgba(255,204,0,0.2));
         }
+        
+        .gold-line {
+            width: 80px;
+            height: 3px;
+            background: var(--gold-gradient);
+            margin: 15px auto 25px auto;
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.05em;
+            max-width: 600px;
+            margin: 0 auto 45px auto;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
         .wrapper {
-            max-width: 500px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 520px;
             text-align: left;
         }
+        
         .section-card {
-            background: rgba(2, 12, 27, 0.4);
-            border: 1px solid rgba(255, 204, 0, 0.1);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 30px 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 204, 0, 0.03);
+            backdrop-filter: blur(10px);
         }
+        
         h2 {
-            color: #ffcc00;
-            font-size: 1.5em;
+            color: var(--gold-solid);
+            font-size: 1.4em;
+            margin-top: 0;
             margin-bottom: 25px;
-            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
-            padding-bottom: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
         }
+        
         .service-box {
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 4px solid #ffcc00;
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background: var(--box-bg);
+            border-left: 4px solid var(--gold-solid);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 22px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            border-left-width: 4px;
+            border-left-color: var(--gold-solid);
+            transition: all 0.3s ease;
         }
+        
+        .service-box:hover {
+            transform: translateX(3px);
+            background: rgba(255, 255, 255, 0.04);
+            border-left-color: #ffe066;
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.05);
+        }
+        
+        .service-box:last-child {
+            margin-bottom: 0;
+        }
+        
         h3 {
-            color: #ffcc00;
-            margin: 0 0 8px 0;
+            color: var(--gold-solid);
+            margin: 0 0 10px 0;
             font-size: 1.15em;
+            font-weight: 600;
+            letter-spacing: 0.3px;
         }
+        
         .service-box p {
             text-align: left;
             font-size: 0.9em;
-            color: #ccd6f6;
+            color: var(--text-main);
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-weight: 300;
         }
+        
         .btn-container {
             text-align: center;
-            margin-top: 25px;
+            margin-top: 35px;
         }
+        
         .btn-wa-lux {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
             color: white;
-            padding: 12px 24px;
+            padding: 16px 32px;
             text-decoration: none;
-            font-weight: 700;
-            border-radius: 8px;
-            font-size: 1em;
-            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+            font-weight: 600;
+            border-radius: 10px;
+            font-size: 1.05em;
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
             transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            width: 100%;
+        }
+        
+        .btn-wa-lux:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.4);
         }
     </style>
 </head>
@@ -86,7 +173,8 @@
 
     <div class="crown-icon">👑</div>
     <h1>KING JOKI</h1>
-    <p style="color: #8892b0; margin-bottom: 40px;">Premium Office Administration Services & Professional Application Development</p>
+    <div class="gold-line"></div>
+    <p class="subtitle">Premium Office Administration Services & Professional Application Development</p>
 
     <div class="wrapper">
         <div class="section-card">
@@ -94,22 +182,22 @@
             
             <div class="service-box">
                 <h3>📚 Jasa Pengetikan & Pengolahan Dokumen Kantor</h3>
-                <p>Pendampingan intensif dari penataan format laporan bisnis, pengolahan data administrasi secara komprehensif, olah referensi digital, hingga persiapan penyusunan berkas operasional perusahaan pasca-revisi.</p>
+                <p>Pendampingan intensif untuk penataan format laporan bisnis eksekutif, pengolahan data administrasi korporat secara komprehensif, manajemen sitasi dan olah referensi digital terintegrasi, hingga persiapan finalisasi berkas operasional perusahaan pasca-revisi berkala.</p>
             </div>
 
             <div class="service-box">
-                <h3>📝 Penyusunan Formulir & Laporan Reguler</h3>
-                <p>Penyusunan format dokumen terstruktur, analisis data internal operasional, penataan arsip berbasis digital, serta pembuatan slide presentasi (PPT) berdesain interaktif dan profesional.</p>
+                <h3>📝 Penyusunan Formulir & Laporan Reguler Usaha</h3>
+                <p>Penyusunan format dokumen bisnis terstruktur, analisis data internal operasional instansi, penataan sistem pengarsipan berkas dinamis berbasis cloud/digital, serta pembuatan slide presentasi (PPT) premium dengan desain interaktif dan infografis profesional.</p>
             </div>
 
             <div class="service-box">
-                <h3>💻 Jasa Tugas Coding & Pembuatan APK</h3>
-                <p>Koding script tingkat lanjut (Python, Web Backend/Frontend, & PHP) serta pengembangan aplikasi Android kustom untuk kebutuhan digitalisasi bisnis.</p>
+                <h3>💻 Jasa Tugas Coding & Pengembangan APK</h3>
+                <p>Koding skrip tingkat lanjut untuk optimasi automasi (Python, Web Backend/Frontend Architecture, & PHP Sistem) serta rekayasa pengembangan aplikasi Android kustom guna mendukung akselerasi transformasi digitalisasi bisnis Anda.</p>
             </div>
             
             <div class="btn-container">
                 <a href="https://wa.me" class="btn-wa-lux" target="_blank">
-                    💬 Hubungi via WhatsApp Bisnis
+                    💬 Hubungi Layanan WhatsApp Bisnis
                 </a>
             </div>
         </div>
