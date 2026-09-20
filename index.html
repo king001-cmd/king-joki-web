@@ -15,6 +15,10 @@
             --border-glow: rgba(241, 196, 15, 0.15);
         }
         body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background-color: var(--bg-dark); color: var(--text-main); scroll-behavior: smooth; }
+        
+        /* CSS Khusus Menghapus Total Watermark Netlify */
+        #netlify-nitro-badge, [class*="netlify"], .netlify-badge { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
+        
         header { 
             background: radial-gradient(circle at top, #0a192f 0%, var(--bg-dark) 80%);
             padding: 80px 20px 60px; text-align: center; border-bottom: 2px solid transparent; border-image: var(--gold-gradient) 1; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
@@ -38,7 +42,7 @@
         .badge-premium { background: var(--gold-gradient); color: #020c1b; padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.95em; box-shadow: 0 4px 15px rgba(241,196,15,0.25); display: inline-block; }
         .dev-badge-container { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
         .dev-badge { flex: 1; min-width: 200px; background: rgba(2, 12, 27, 0.6); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95em; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .dev-badge:hover { border-color: var(--gold-solid); background: rgba(241,196,15,0.05); transform: translateY(-2px); }
+        .dev-badge:hover { border-color: var(--gold-solid); background: rgba(241, 196, 15, 0.05); transform: translateY(-2px); }
         .step-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
         .step-card { background: rgba(2, 12, 27, 0.4); padding: 20px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.02); }
         .step-num { width: 35px; height: 35px; background: var(--gold-gradient); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 12px; }
@@ -129,8 +133,3 @@
         <h2>⚙️ Validasi Kredibilitas Developer</h2>
         <p style="color: var(--text-muted); margin: 0 0 15px 0;">Lihat basis repositori pengerjaan dan kerangka logika pemrograman kami secara langsung:</p>
         <div class="dev-badge-container">
-            <a href="https://github.com" class="dev-badge" target="_blank">🐙 Repositori Resmi GitHub</a>
-            <a href="https://thunkable.com" class="dev-badge" target="_blank">📱 Proyek Aplikasi Thunkable</a>
-        </div>
-    </div>
-    <div class="section-card">
