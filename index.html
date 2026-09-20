@@ -1,4 +1,3 @@
-cat << 'EOF' > index.html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -9,76 +8,91 @@ cat << 'EOF' > index.html
         :root {
             --gold-solid: #ffcc00;
             --bg-dark: #070b19;
-            --card-bg: rgba(2, 12, 27, 0.4);
+            --card-bg: rgba(2, 12, 27, 0.6);
             --text-light: #ccd6f6;
             --text-muted: #8892b0;
         }
         body {
             background-color: var(--bg-dark);
             color: #fff;
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
         .crown-icon {
             font-size: 50px;
-            margin-top: 40px;
+            margin-top: 20px;
         }
         h1 {
             color: var(--gold-solid);
-            font-size: 2.5em;
+            font-size: 2.2em;
             margin: 10px 0;
             letter-spacing: 2px;
             font-weight: bold;
         }
         .subtitle {
             color: var(--text-muted);
-            font-size: 1.1em;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+            font-size: 1em;
+            max-width: 90%;
+            margin: 0 auto 30px auto;
             line-height: 1.5;
         }
         .wrapper {
-            max-width: 500px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 450px;
             text-align: left;
+            padding: 0 10px;
+            box-sizing: border-box;
         }
         .section-card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 204, 0, 0.15);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            margin-bottom: 30px;
+            border: 1px solid rgba(255, 204, 0, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
         }
         h2 {
             color: var(--gold-solid);
-            font-size: 1.5em;
+            font-size: 1.3em;
             margin-top: 0;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 1px solid rgba(255, 204, 0, 0.2);
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .service-box {
             border-left: 3px solid var(--gold-solid);
-            padding-left: 15px;
-            margin-bottom: 30px;
+            padding-left: 12px;
+            margin-bottom: 20px;
         }
         .service-box:last-child {
             margin-bottom: 0;
         }
         h3 {
             color: var(--gold-solid);
-            margin: 0 0 8px 0;
-            font-size: 1.2em;
+            margin: 0 0 6px 0;
+            font-size: 1.1em;
         }
         .service-box p {
             text-align: left;
-            font-size: 0.95em;
+            font-size: 0.88em;
             color: var(--text-light);
             margin: 0;
             line-height: 1.5;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 25px;
         }
         .btn-wa-lux {
             display: inline-flex;
@@ -86,20 +100,18 @@ cat << 'EOF' > index.html
             justify-content: center;
             background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
             color: white;
-            padding: 15px 30px;
-            margin: 10px auto;
+            padding: 12px 24px;
             text-decoration: none;
             font-weight: 700;
-            border-radius: 10px;
-            font-size: 1.15em;
-            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
             transition: all 0.3s ease;
-            letter-spacing: 1px;
-            font-family: sans-serif;
+            letter-spacing: 0.5px;
         }
         .btn-wa-lux:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(39, 174, 96, 0.4);
         }
     </style>
 </head>
@@ -114,12 +126,12 @@ cat << 'EOF' > index.html
             <h2>💎 Layanan Eksklusif & Lengkap</h2>
             
             <div class="service-box">
-                <h3>📋 Jasa Pengetikan & Pengolahan Dokumen Kantor</h3>
+                <h3>📋 Jasa Pengetikan & Pengolahan Dokumen</h3>
                 <p>Bantuan penyusunan laporan bisnis, administrasi data kantor, penataan dokumen perusahaan, dan pengarsipan digital secara komprehensif.</p>
             </div>
 
             <div class="service-box">
-                <h3>📝 Penyusunan Formulir & Laporan Perusahaan</h3>
+                <h3>📝 Penyusunan Formulir & Laporan Usaha</h3>
                 <p>Pembuatan slide presentasi bisnis profesional, analisis data operasional, penyusunan riset pasar internal, serta manajemen berkas digital.</p>
             </div>
 
@@ -127,15 +139,14 @@ cat << 'EOF' > index.html
                 <h3>💻 Jasa Tugas Coding & Pembuatan APK</h3>
                 <p>Koding script tingkat lanjut (Python, Web Backend/Frontend, & PHP) serta pengembangan aplikasi Android kustom.</p>
             </div>
-        </div>
-        
-        <div style="text-align: center;">
-            <a href="https://wa.me" class="btn-wa-lux" target="_blank">
-                💬 Hubungi via WhatsApp Bisnis
-            </a>
+            
+            <div class="btn-container">
+                <a href="https://wa.me" class="btn-wa-lux" target="_blank">
+                    💬 Hubungi via WhatsApp Bisnis
+                </a>
+            </div>
         </div>
     </div>
 
 </body>
 </html>
-EOF
