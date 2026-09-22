@@ -3,261 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KING JOKI - Premium Academic Services</title>
-    <!-- Google Fonts untuk kesan mewah -->
+    <title>KING JOKI | Premium Academic Writing & Executive Services</title>
+    <!-- Fonts Kerajaan Romawi & Modern -->
     <link href="https://googleapis.com" rel="stylesheet">
-    <!-- Font Awesome untuk Icon (Menggunakan CDN Terstabil) -->
+    <!-- FontAwesome Pro Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #05080e 0%, #0c101b 100%);
-            --gold-primary: #d4af37;
-            --gold-secondary: #aa7c11;
-            --gold-light: #f3e5ab;
-            --text-light: #f3f4f6;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(212, 175, 55, 0.25);
+            --gold-linear: linear-gradient(135deg, #ffe082 0%, #d4af37 50%, #8a6f27 100%);
+            --gold-glow: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
+            --bg-dark: #030712;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            background: var(--bg-gradient);
-            color: var(--text-light);
+            background-color: var(--bg-dark);
+            color: #f3f4f6;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            padding: 40px 0;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 650px;
-            width: 90%;
-            margin: 0 auto;
-            z-index: 1;
+        /* Canvas untuk partikel emas melayang */
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
         }
 
-        /* Header Styles */
+        .main-wrapper {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Bingkai Luar Megah Bermotif Emas Menyala */
+        .luxury-container {
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.85) 0%, rgba(3, 7, 18, 0.95) 100%);
+            border: 2px solid;
+            border-image: linear-gradient(to bottom, #d4af37, #4a3b12, #111827) 1;
+            border-radius: 1px; /* Syarat border-image */
+            padding: 45px 30px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(212, 175, 55, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+            position: relative;
         }
 
-        .crown-icon {
-            font-size: 3rem;
-            color: var(--gold-primary);
-            margin-bottom: 12px;
-            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6));
+        /* Animasi Mahkota Berpendar */
+        .crown-master {
+            font-size: 4rem;
+            background: var(--gold-linear);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            filter: var(--gold-glow);
+            animation: float 4s ease-in-out infinite;
         }
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 2.8rem;
-            letter-spacing: 3px;
-            font-weight: 800;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(212, 175, 55, 0.2);
-            margin-bottom: 8px;
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            background: linear-gradient(to right, #fff 0%, #fbe399 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
         }
 
-        .subtitle {
-            font-size: 0.85rem;
-            color: #a0aec0;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-
-        .divider {
-            height: 2px;
-            width: 100px;
-            background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+        .gold-line {
+            height: 1px;
+            width: 180px;
+            background: linear-gradient(to right, transparent, #d4af37, #ffe082, #d4af37, transparent);
             margin: 15px auto;
+            position: relative;
         }
 
-        /* Services List */
-        .services-list {
+        .gold-line::after {
+            content: '♦';
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #d4af37;
+            font-size: 0.8rem;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+
+        /* Daftar Menu Layanan Sultan */
+        .cards-space {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 25px;
             margin-bottom: 45px;
         }
 
-        .service-item {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
+        .premium-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             padding: 25px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            border-radius: 16px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
         }
 
-        .service-item:hover {
-            transform: translateY(-4px);
-            border-color: var(--gold-primary);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(to bottom right, rgba(212,175,55,0.5), transparent, rgba(212,175,55,0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
         }
 
-        .service-title {
-            font-size: 1.2rem;
-            font-weight: 600;
+        .premium-card:hover {
+            background: rgba(212, 175, 55, 0.03);
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.1);
+        }
+
+        .premium-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
             color: #ffffff;
-            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .service-title i {
-            color: var(--gold-primary);
-            font-size: 1.2rem;
+        .card-title i {
+            background: var(--gold-linear);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .service-desc {
+        .luxury-badge {
+            background: var(--gold-linear);
+            color: #030712;
+            font-weight: 800;
             font-size: 0.9rem;
-            color: #cbd5e1;
-            font-weight: 300;
+            padding: 8px 18px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #9ca3af;
             line-height: 1.6;
-            margin-bottom: 20px;
+            font-weight: 300;
         }
 
-        /* Price Button Luxury Style */
-        .price-badge {
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
-            color: #05080e;
-            padding: 14px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 1.1rem;
+        /* Seksi Kontak & Nomor Terpampang Megah */
+        .executive-contact {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .price-badge span {
-            font-size: 0.7rem;
+        .contact-title {
+            font-size: 0.85rem;
+            color: #d4af37;
             text-transform: uppercase;
-            font-weight: 600;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .phone-display {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ffffff;
             letter-spacing: 2px;
-            opacity: 0.85;
-            margin-bottom: 2px;
+            margin-bottom: 25px;
+            display: block;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
-        /* Floating / Bottom Call To Action WhatsApp */
-        .cta-container {
-            text-align: center;
-            margin-top: 10px;
-            padding-bottom: 20px;
-        }
-
-        .btn-whatsapp {
+        .btn-luxury-wa {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
             background: #25d366;
             color: #ffffff;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-size: 1.05rem;
             font-weight: 700;
+            font-size: 1.1rem;
             text-decoration: none;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
             width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .btn-whatsapp:hover {
-            background: #20ba5a;
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+        .btn-luxury-wa:hover {
+            background: #1ebd54;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
         }
 
-        .btn-whatsapp i {
-            font-size: 1.4rem;
+        /* Animasi */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
-        @media (min-width: 500px) {
-            .btn-whatsapp {
-                width: auto;
-            }
+        @media (max-width: 500px) {
+            h1 { font-size: 2.2rem; }
+            .card-top { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .luxury-badge { width: 100%; text-align: center; }
+            .phone-display { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="crown-icon">
-                <i class="fa-solid fa-crown"></i>
-            </div>
-            <h1>KING JOKI</h1>
-            <div class="subtitle">Premium Academic Services</div>
-            <div class="divider"></div>
-        </header>
+    <!-- Canvas Partikel Emas -->
+    <canvas id="particles-canvas"></canvas>
 
-        <div class="services-list">
+    <div class="main-wrapper">
+        <div class="luxury-container">
             
-            <!-- Layanan 1 -->
-            <div class="service-item">
-                <div class="service-title">
-                    <i class="fa-solid fa-graduation-cap"></i> Jasa Skripsi Eksekutif
-                </div>
-                <div class="service-desc">Pengerjaan Full BAB dari awal hingga akhir, pendampingan revisi mendalam, dan olah data profesional terpercaya.</div>
-                <div class="price-badge">
-                    <span>Mulai Dari</span>
-                    Rp 1.000.000
-                </div>
-            </div>
+            <header>
+                <div class="crown-master"><i class="fa-solid fa-crown"></i></div>
+                <h1>KING JOKI</h1>
+                <div class="gold-line"></div>
+                <div class="tagline">Executive Academic Bureau</div>
+            </header>
 
-            <!-- Layanan 2 -->
-            <div class="service-item">
-                <div class="service-title">
-                    <i class="fa-solid fa-book-open"></i> Penyusunan Makalah Premium
+            <div class="cards-space">
+                <!-- Paket Skripsi -->
+                <div class="premium-card">
+                    <div class="card-top">
+                        <div class="card-title"><i class="fa-solid fa-mortar-board"></i> Jasa Skripsi Full BAB</div>
+                        <div class="luxury-badge">Mulai 1 Jutaan</div>
+                    </div>
+                    <div class="card-desc">Penyusunan berkas komparatif terpadu semua bab, metodologi riset matang, olah data statistik presisi tinggi, dan pendampingan kelulusan mutlak.</div>
                 </div>
-                <div class="service-desc">Analisis materi tajam, pengerjaan rapi standar akademis, bebas plagiarisme, dan pengerjaan cepat.</div>
-                <div class="price-badge">
-                    <span>Mulai Dari</span>
-                    Rp 300.000
-                </div>
-            </div>
 
-            <!-- Layanan 3 -->
-            <div class="service-item">
-                <div class="service-title">
-                    <i class="fa-solid fa-pen-to-square"></i> Tugas Akademik &amp; Lainnya
-                </div>
-                <div class="service-desc">Bantuan penyelesaian esai, review jurnal, laporan praktikum, serta tugas pengetikan administrasi lengkap.</div>
-                <div class="price-badge">
-                    <span>Mulai Dari</span>
-                    Rp 300.000
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Tombol WhatsApp Resmi -->
-        <div class="cta-container">
-            <a href="https://wa.me." class="btn-whatsapp" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Hubungi via WhatsApp
-            </a>
-        </div>
-    </div>
-
-</body>
-</html>
+                <!-- Paket Makalah -->
+                <div class="premium-card">
+                    <div class="card-top">
+                        <div class="card-title"><i class="fa-solid fa-scroll"></i> Makalah Eksklusif</div>
+                        <div class="luxury-badge">Mulai 300K</div>
+                    </div>
