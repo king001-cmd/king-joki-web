@@ -3,303 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KING JOKI | Premium Academic Writing & Executive Services</title>
-    <!-- Fonts Kerajaan Romawi & Modern -->
+    <title>KING JOKI - Premium Services</title>
+    <!-- Google Fonts & Icon -->
     <link href="https://googleapis.com" rel="stylesheet">
-    <!-- FontAwesome Pro Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
-        :root {
-            --gold-linear: linear-gradient(135deg, #ffe082 0%, #d4af37 50%, #8a6f27 100%);
-            --gold-glow: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
-            --bg-dark: #030712;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #f3f4f6;
-            min-height: 100vh;
+            background-color: #060b13;
+            color: #ffffff;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            position: relative;
-            overflow-x: hidden;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 30px 15px;
         }
 
-        /* Canvas untuk partikel emas melayang */
-        #particles-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .container {
             width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .main-wrapper {
-            width: 100%;
-            max-width: 600px;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Bingkai Luar Megah Bermotif Emas Menyala */
-        .luxury-container {
-            background: linear-gradient(180deg, rgba(17, 24, 39, 0.85) 0%, rgba(3, 7, 18, 0.95) 100%);
-            border: 2px solid;
-            border-image: linear-gradient(to bottom, #d4af37, #4a3b12, #111827) 1;
-            border-radius: 1px; /* Syarat border-image */
-            padding: 45px 30px;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(212, 175, 55, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            max-width: 500px;
+            background-color: #0b1320;
+            border: 1px solid #162235;
+            border-radius: 16px;
+            padding: 30px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
 
         header {
             text-align: center;
-            margin-bottom: 45px;
-            position: relative;
+            margin-bottom: 25px;
         }
 
-        /* Animasi Mahkota Berpendar */
-        .crown-master {
-            font-size: 4rem;
-            background: var(--gold-linear);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            filter: var(--gold-glow);
-            animation: float 4s ease-in-out infinite;
+        .crown-img {
+            font-size: 3.5rem;
+            color: #f1c40f;
+            margin-bottom: 5px;
+            filter: drop-shadow(0 2px 10px rgba(241, 196, 15, 0.4));
         }
 
         h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: 6px;
-            background: linear-gradient(to right, #fff 0%, #fbe399 50%, #d4af37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            color: #f1c40f;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
         }
 
-        .gold-line {
-            height: 1px;
-            width: 180px;
-            background: linear-gradient(to right, transparent, #d4af37, #ffe082, #d4af37, transparent);
-            margin: 15px auto;
-            position: relative;
+        .wa-banner {
+            display: inline-block;
+            background-color: rgba(37, 211, 102, 0.1);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            color: #25d366;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
         }
 
-        .gold-line::after {
-            content: '♦';
-            position: absolute;
-            top: -9px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #d4af37;
-            font-size: 0.8rem;
-        }
-
-        .tagline {
+        .subtitle {
             font-size: 0.85rem;
-            color: #9ca3af;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            color: #8fa0b5;
+            line-height: 1.5;
             font-weight: 300;
         }
 
-        /* Daftar Menu Layanan Sultan */
-        .cards-space {
+        /* Struktur Tabel Utama */
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #1d2d44;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .th-left {
+            color: #f1c40f;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .th-right {
+            color: #f1c40f;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .service-list {
             display: flex;
             flex-direction: column;
             gap: 25px;
-            margin-bottom: 45px;
+            margin-bottom: 35px;
         }
 
-        .premium-card {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            padding: 25px;
-            border-radius: 16px;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            cursor: pointer;
-        }
-
-        .premium-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 16px;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(212,175,55,0.5), transparent, rgba(212,175,55,0.1));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .premium-card:hover {
-            background: rgba(212, 175, 55, 0.03);
-            transform: translateY(-4px) scale(1.01);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.1);
-        }
-
-        .premium-card:hover::before {
-            opacity: 1;
-        }
-
-        .card-top {
+        .service-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            gap: 15px;
         }
 
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
+        .service-info {
+            flex: 1;
+        }
+
+        .service-name {
+            font-size: 1rem;
+            font-weight: 600;
             color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            margin-bottom: 4px;
         }
 
-        .card-title i {
-            background: var(--gold-linear);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .service-desc {
+            font-size: 0.8rem;
+            color: #8fa0b5;
+            line-height: 1.4;
         }
 
-        .luxury-badge {
-            background: var(--gold-linear);
-            color: #030712;
-            font-weight: 800;
-            font-size: 0.9rem;
-            padding: 8px 18px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        /* Tombol Kapsul Emas */
+        .price-button {
+            background: linear-gradient(180deg, #ffe893 0%, #d4af37 100%);
+            color: #060b13;
+            padding: 10px 18px;
+            border-radius: 25px;
+            text-align: center;
+            min-width: 130px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .price-button span {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 1px;
             letter-spacing: 0.5px;
         }
 
-        .card-desc {
-            font-size: 0.9rem;
-            color: #9ca3af;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        /* Seksi Kontak & Nomor Terpampang Megah */
-        .executive-contact {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            padding: 30px 20px;
+        /* Tombol Kontak WA */
+        .wa-box {
+            border-top: 1px solid #1d2d44;
+            padding-top: 25px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .contact-title {
-            font-size: 0.85rem;
-            color: #d4af37;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .phone-display {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: #ffffff;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            display: block;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-luxury-wa {
+        .btn-wa {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            background: #25d366;
+            gap: 10px;
+            background-color: #25d366;
             color: #ffffff;
             font-weight: 700;
-            font-size: 1.1rem;
             text-decoration: none;
             width: 100%;
-            padding: 16px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-luxury-wa:hover {
-            background: #1ebd54;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-        }
-
-        /* Animasi */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @media (max-width: 500px) {
-            h1 { font-size: 2.2rem; }
-            .card-top { flex-direction: column; align-items: flex-start; gap: 10px; }
-            .luxury-badge { width: 100%; text-align: center; }
-            .phone-display { font-size: 1.5rem; }
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
         }
     </style>
 </head>
 <body>
 
-    <!-- Canvas Partikel Emas -->
-    <canvas id="particles-canvas"></canvas>
+    <div class="container">
+        <header>
+            <div class="crown-img"><i class="fa-solid fa-crown"></i></div>
+            <h1>KING JOKI</h1>
+            <div class="wa-banner"><i class="fa-brands fa-whatsapp"></i> WA: 0838-5314-4462</div>
+            <div class="subtitle">Premium Office Administration Services &amp; Professional Application Development</div>
+        </header>
 
-    <div class="main-wrapper">
-        <div class="luxury-container">
+        <!-- Judul Kolom -->
+        <div class="table-header">
+            <div class="th-left">Kategori Layanan Utama</div>
+            <div class="th-right">Harga Investasi</div>
+        </div>
+
+        <!-- Daftar Harga -->
+        <div class="service-list">
             
-            <header>
-                <div class="crown-master"><i class="fa-solid fa-crown"></i></div>
-                <h1>KING JOKI</h1>
-                <div class="gold-line"></div>
-                <div class="tagline">Executive Academic Bureau</div>
-            </header>
-
-            <div class="cards-space">
-                <!-- Paket Skripsi -->
-                <div class="premium-card">
-                    <div class="card-top">
-                        <div class="card-title"><i class="fa-solid fa-mortar-board"></i> Jasa Skripsi Full BAB</div>
-                        <div class="luxury-badge">Mulai 1 Jutaan</div>
-                    </div>
-                    <div class="card-desc">Penyusunan berkas komparatif terpadu semua bab, metodologi riset matang, olah data statistik presisi tinggi, dan pendampingan kelulusan mutlak.</div>
+            <!-- Baris 1: Skripsi -->
+            <div class="service-row">
+                <div class="service-info">
+                    <div class="service-name">Jasa Pengetikan &amp; Dokumen Kantor</div>
+                    <div class="service-desc">(Full Pengerjaan Dokumen Bisnis &amp; Administrasi Korporat / Skripsi Full BAB)</div>
                 </div>
+                <div class="price-button">
+                    <span>Mulai</span>
+                    Rp1.000.000
+                </div>
+            </div>
 
-                <!-- Paket Makalah -->
-                <div class="premium-card">
-                    <div class="card-top">
-                        <div class="card-title"><i class="fa-solid fa-scroll"></i> Makalah Eksklusif</div>
-                        <div class="luxury-badge">Mulai 300K</div>
-                    </div>
+            <!-- Baris 2: Makalah -->
+            <div class="service-row">
+                <div class="service-info">
+                    <div class="service-name">Penyusunan Format Laporan Lengkap</div>
+                    <div class="service-desc">(Penyusunan Formulir Usaha, Makalah, &amp; Review Dokumen Internal)</div>
+                </div>
+                <div class="price-button">
+                    <span>Mulai</span>
+                    Rp300.000
+                </div>
+            </div>
+
+            <!-- Baris 3: Coding -->
+            <div class="service-row">
+                <div class="service-info">
+                    <div class="service-name">Tugas Pemrograman / Coding Kustom</div>
+                    <div class="service-desc">(Pengembangan Skrip Otomasi Khusus IT &amp; Database)</div>
+                </div>
+                <div class="price-button">
+                    <span>Mulai</span>
+                    Rp300.000
+                </div>
+            </div>
+
+            <!-- Baris 4: Aplikasi -->
+            <div class="service-row">
+                <div class="service-info">
+                    <div class="service-name">Perancangan &amp; Pembuatan Aplikasi</div>
+                    <div class="service-desc">(Pengembangan Aplikasi Android Native &amp; Custom APK)</div>
+                </div>
+                <div class="price-button">
+                    <span>Mulai</span>
+                    Rp300.000
+                </div>
+            </div>
+
+            <!-- Baris 5: Data -->
+            <div class="service-row">
+                <div class="service-info">
+                    <div class="service-name">Olah Data Administrasi &amp; Statistik</div>
+                    <div class="service-desc">(Analisis Data Validasi Operasional &amp; SPSS/PLS)</div>
+                </div>
+                <div class="price-button">
+                    <span>Mulai</span>
+                    Rp300.000
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tombol WhatsApp Terintegrasi -->
+        <div class="wa-box">
+            <a href="https://wa.me." class="btn-wa" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp: 0838-5314-4462
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
