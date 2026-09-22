@@ -6,18 +6,18 @@
     <title>KING JOKI - Premium Academic Services</title>
     <!-- Google Fonts untuk kesan mewah -->
     <link href="https://googleapis.com" rel="stylesheet">
-    <!-- Font Awesome untuk Icon -->
+    <!-- Font Awesome untuk Icon (Menggunakan CDN Terstabil) -->
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #060a12 0%, #111827 100%);
+            --bg-gradient: linear-gradient(135deg, #05080e 0%, #0c101b 100%);
             --gold-primary: #d4af37;
             --gold-secondary: #aa7c11;
             --gold-light: #f3e5ab;
             --text-light: #f3f4f6;
             --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(212, 175, 55, 0.2);
+            --card-border: rgba(212, 175, 55, 0.25);
         }
 
         * {
@@ -34,231 +34,167 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
-        }
-
-        /* Background Ornament */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
-            z-index: 0;
-            pointer-events: none;
+            justify-content: center;
+            padding: 40px 0;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 650px;
             width: 90%;
-            margin: 60px auto;
+            margin: 0 auto;
             z-index: 1;
         }
 
         /* Header Styles */
         header {
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            margin-bottom: 40px;
         }
 
         .crown-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--gold-primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6));
-            animation: pulse 3s infinite alternate;
         }
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            letter-spacing: 4px;
+            font-size: 2.8rem;
+            letter-spacing: 3px;
             font-weight: 800;
-            background: linear-gradient(to right, #fff 20%, var(--gold-light) 40%, var(--gold-primary) 60%, #fff 80%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
-            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(212, 175, 55, 0.2);
+            margin-bottom: 8px;
         }
 
         .subtitle {
-            font-size: 0.95rem;
-            color: #9ca3af;
-            letter-spacing: 2px;
+            font-size: 0.85rem;
+            color: #a0aec0;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .divider {
             height: 2px;
-            width: 150px;
+            width: 100px;
             background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
-            margin: 20px auto;
+            margin: 15px auto;
         }
 
-        /* Pricing Table & List Styles */
+        /* Services List */
         .services-list {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
             margin-bottom: 45px;
         }
 
         .service-item {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 25px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--gold-primary), var(--gold-secondary));
-            opacity: 0;
-            transition: opacity 0.3s;
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         .service-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.1);
-        }
-
-        .service-item:hover::before {
-            opacity: 1;
-        }
-
-        .service-info {
-            flex: 1;
-            padding-right: 20px;
+            transform: translateY(-4px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
         }
 
         .service-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: #ffffff;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .service-title i {
             color: var(--gold-primary);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .service-desc {
             font-size: 0.9rem;
-            color: #9ca3af;
+            color: #cbd5e1;
             font-weight: 300;
-            line-height: 1.5;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
+        /* Price Button Luxury Style */
         .price-badge {
             background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
-            color: #060a12;
-            padding: 12px 24px;
-            border-radius: 50px;
+            color: #05080e;
+            padding: 14px;
+            border-radius: 14px;
             font-weight: 700;
-            font-size: 1.05rem;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            font-size: 1.1rem;
             text-align: center;
-            min-width: 160px;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .price-badge span {
-            display: block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             font-weight: 600;
-            letter-spacing: 1px;
-            opacity: 0.8;
+            letter-spacing: 2px;
+            opacity: 0.85;
             margin-bottom: 2px;
         }
 
-        /* Call To Action Button */
+        /* Floating / Bottom Call To Action WhatsApp */
         .cta-container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
+            padding-bottom: 20px;
         }
 
         .btn-whatsapp {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
-            background: transparent;
-            color: var(--gold-primary);
-            border: 2px solid var(--gold-primary);
-            padding: 16px 40px;
+            background: #25d366;
+            color: #ffffff;
+            padding: 16px 36px;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
         }
 
         .btn-whatsapp:hover {
-            color: #060a12;
-            background: var(--gold-primary);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
-            transform: scale(1.03);
+            background: #20ba5a;
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
         }
 
         .btn-whatsapp i {
             font-size: 1.4rem;
         }
 
-        /* Animations */
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.9; }
-            100% { transform: scale(1.05); opacity: 1; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .service-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-                padding: 20px;
-            }
-            .service-info {
-                padding-right: 0;
-            }
-            .price-badge {
-                width: 100%;
-            }
-            h1 {
-                font-size: 2.2rem;
+        @media (min-width: 500px) {
+            .btn-whatsapp {
+                width: auto;
             }
         }
     </style>
@@ -268,51 +204,45 @@
     <div class="container">
         <header>
             <div class="crown-icon">
-                <i class="fa-solid to fa-crown"></i>
+                <i class="fa-solid fa-crown"></i>
             </div>
             <h1>KING JOKI</h1>
-            <div class="subtitle">Premium Academic Services & Professional Writing</div>
+            <div class="subtitle">Premium Academic Services</div>
             <div class="divider"></div>
         </header>
 
         <div class="services-list">
             
-            <!-- Layanan 1: Skripsi -->
+            <!-- Layanan 1 -->
             <div class="service-item">
-                <div class="service-info">
-                    <div class="service-title">
-                        <i class="fa-solid fa-graduation-cap"></i> Jasa Skripsi Eksekutif
-                    </div>
-                    <div class="service-desc">Pengerjaan Full BAB dari awal hingga akhir, pendampingan revisi mendalam, dan olah data profesional terpercaya.</div>
+                <div class="service-title">
+                    <i class="fa-solid fa-graduation-cap"></i> Jasa Skripsi Eksekutif
                 </div>
+                <div class="service-desc">Pengerjaan Full BAB dari awal hingga akhir, pendampingan revisi mendalam, dan olah data profesional terpercaya.</div>
                 <div class="price-badge">
                     <span>Mulai Dari</span>
                     Rp 1.000.000
                 </div>
             </div>
 
-            <!-- Layanan 2: Makalah -->
+            <!-- Layanan 2 -->
             <div class="service-item">
-                <div class="service-info">
-                    <div class="service-title">
-                        <i class="fa-solid fa-book"></i> Penyusunan Makalah Premium
-                    </div>
-                    <div class="service-desc">Analisis materi tajam, pengerjaan rapi standar akademis, bebas plagiarisme, dan pengerjaan cepat.</div>
+                <div class="service-title">
+                    <i class="fa-solid fa-book-open"></i> Penyusunan Makalah Premium
                 </div>
+                <div class="service-desc">Analisis materi tajam, pengerjaan rapi standar akademis, bebas plagiarisme, dan pengerjaan cepat.</div>
                 <div class="price-badge">
                     <span>Mulai Dari</span>
                     Rp 300.000
                 </div>
             </div>
 
-            <!-- Layanan 3: Tugas Kuliah & Lainnya -->
+            <!-- Layanan 3 -->
             <div class="service-item">
-                <div class="service-info">
-                    <div class="service-title">
-                        <i class="fa-solid fa-pen-to-square"></i> Tugas Akademik & Tugas Lainnya
-                    </div>
-                    <div class="service-desc">Bantuan penyelesaian esai, review jurnal, laporan praktikum, serta tugas pengetikan administrasi lengkap.</div>
+                <div class="service-title">
+                    <i class="fa-solid fa-pen-to-square"></i> Tugas Akademik &amp; Lainnya
                 </div>
+                <div class="service-desc">Bantuan penyelesaian esai, review jurnal, laporan praktikum, serta tugas pengetikan administrasi lengkap.</div>
                 <div class="price-badge">
                     <span>Mulai Dari</span>
                     Rp 300.000
@@ -321,3 +251,13 @@
 
         </div>
 
+        <!-- Tombol WhatsApp Resmi -->
+        <div class="cta-container">
+            <a href="https://wa.me." class="btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Hubungi via WhatsApp
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
